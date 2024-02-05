@@ -8,9 +8,15 @@ const employees = [
   
 const emplWithNewSalary = employees.map(e =>( {
     name: e.name, 
-    salary: e.salary * 2
+    salary: e.salary * 2 //создала новые объекты в новом массиве
 }));
+// const emplWithNewSalary1 = employees.map(e => {
+//     e.salary *=2;   оставила ссылки на старые объекты в новом массиве
+//     return e;
+// });
+
 console.log("1. Doubling salary:");
+// console.log(emplWithNewSalary1);
 emplWithNewSalary.forEach(e => console.log(`${e.name} - ${e.salary}`));
 
 // 2. Задача: "Фильтрация сотрудников" Используя метод filter, отфильтруйте сотрудников, 
@@ -27,7 +33,7 @@ console.log(`3. Total salary is ${totalSalary}.`);
 // 4. Задача: "Имена в верхнем регистре" Используя метод map, преобразуйте имена всех 
 // сотрудников к верхнему регистру.
 const employees_2 = employees.map(e =>({
-    name: e.name.toUpperCase(), 
+    name: e.name.toUpperCase(), //если не ставить розовые скобки, JS не поймет, что надо вернуть объект, будет выполнять тело ф-ии в {}
     salary: e.salary
 }));
 console.log("4. Uppercase names:");
